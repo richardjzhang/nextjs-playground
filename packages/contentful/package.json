@@ -1,0 +1,22 @@
+{
+  "name": "contentful",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generate:types": "contentful-typescript-codegen --output types/contentful.d.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/client": "^3.7.10",
+    "apollo-link": "^1.2.14",
+    "apollo-link-http": "^1.5.17",
+    "graphql": "^16.6.0"
+  },
+  "devDependencies": {
+    "contentful-management": "^10.30.0",
+    "contentful-typescript-codegen": "^3.4.0"
+  }
+}

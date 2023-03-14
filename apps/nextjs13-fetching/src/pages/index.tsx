@@ -3,33 +3,33 @@ import { Card } from "ui";
 
 const CARD_CONTENT = [
   {
-    title: "Caching Tasks",
-    href: "https://turbo.build/repo/docs/core-concepts/caching",
-    cta: "Read More",
+    title: "Server Side Rendering",
+    href: "/ssr",
+    cta: "See SSR",
   },
   {
-    title: "Running Tasks",
-    href: "https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks",
-    cta: "Read More",
+    title: "Static Site Generation",
+    href: "/ssg",
+    cta: "See SSG",
   },
   {
-    title: "Configuration Options",
-    href: "https://turbo.build/repo/docs/reference/configuration",
-    cta: "Read More",
+    title: "Incremental Static Site Generation",
+    href: "/isr",
+    cta: "See ISR",
   },
 ];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <>
       <Head>
-        <title>Web - Turborepo Example</title>
+        <title>Next.js 13 Fetching</title>
       </Head>
 
       <main className="mx-auto w-auto px-4 pt-16 pb-8 sm:pt-24 lg:px-8">
         <h1 className="mx-auto text-center text-6xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-8xl xl:text-8xl">
-          <span className="block bg-gradient-to-r from-brandred to-brandblue bg-clip-text text-transparent px-2">
-            NextJS 13 Blogs
+          <span className="bg-gradient-to-r from-brandred to-brandblue bg-clip-text text-transparent px-2">
+            Next.js 13 Fetching
           </span>
         </h1>
 
@@ -39,6 +39,6 @@ export default function Home() {
           ))}
         </div>
       </main>
-    </div>
+    </>
   );
 }
