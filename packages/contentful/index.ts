@@ -1,7 +1,8 @@
 import gql from "graphql-tag";
 import apolloClient from "./apollo-client";
+import type { BlogPost, BlogPosts } from "./types";
 
-export async function getAllBlogPosts() {
+async function getAllBlogPosts() {
   try {
     const { data } = await apolloClient.query({
       query: gql`
@@ -10,6 +11,7 @@ export async function getAllBlogPosts() {
             items {
               sys {
                 id
+                firstPublishedAt
               }
               title
               slug
@@ -26,4 +28,4 @@ export async function getAllBlogPosts() {
   }
 }
 
-export default { getAllBlogPosts };
+export { getAllBlogPosts, BlogPost, BlogPosts };

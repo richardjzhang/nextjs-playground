@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { Card } from "ui";
 
 const CARD_CONTENT = [
@@ -35,7 +36,9 @@ export default function Home() {
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly">
           {CARD_CONTENT.map((card) => (
-            <Card key={card.title} {...card} />
+            <Link key={card.title} className="h-full" href={card.href}>
+              <Card {...card} />
+            </Link>
           ))}
         </div>
       </main>

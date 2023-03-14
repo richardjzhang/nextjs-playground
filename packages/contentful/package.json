@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "generate:types": "contentful-typescript-codegen --output types/contentful.d.ts"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -13,10 +10,14 @@
     "@apollo/client": "^3.7.10",
     "apollo-link": "^1.2.14",
     "apollo-link-http": "^1.5.17",
-    "graphql": "^16.6.0"
+    "graphql": "^16.6.0",
+    "graphql-tag": "^2.12.6"
   },
   "devDependencies": {
     "contentful-management": "^10.30.0",
-    "contentful-typescript-codegen": "^3.4.0"
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.9.4"
   }
 }

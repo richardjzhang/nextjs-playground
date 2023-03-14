@@ -4,7 +4,16 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "outputs": ["dist/**", ".next/**"],
+      "env": [
+        "CONTENTFUL_MANAGEMENT_TOKEN",
+        "CONTENTFUL_ENVIRONMENT",
+        "CONTENTFUL_BASE_URL",
+        "CONTENTFUL_ACCESS_TOKEN",
+        "CONTENTFUL_PREVIEW_API",
+        "CONTENTFUL_SPACE_ID",
+        "REVALIDATE_TOKEN"
+      ]
     },
     "lint": {},
     "check-types": {},

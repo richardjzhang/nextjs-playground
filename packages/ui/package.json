@@ -20,6 +20,8 @@
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
+    "contentful": "workspace:*",
+    "dayjs": "^1.11.7",
     "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
     "postcss": "^8.4.20",

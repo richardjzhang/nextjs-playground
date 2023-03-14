@@ -17,9 +17,21 @@ const link = ApolloLink.from([http]);
 
 const cache = new InMemoryCache();
 
+const defaultOptions = {
+  watchQuery: {
+    fetchPolicy: "no-cache",
+    errorPolicy: "ignore",
+  },
+  query: {
+    fetchPolicy: "no-cache",
+    errorPolicy: "all",
+  },
+};
+
 const apolloClient = new ApolloClient({
   link,
   cache,
+  defaultOptions,
 });
 
 export default apolloClient;
