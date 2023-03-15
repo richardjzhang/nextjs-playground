@@ -4,8 +4,15 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  // should be secret, custom header coming in from Contentful
+  let inboundRevalToken = req.headers["x-vercel-reval-key"];
+
   // Check for secret to confirm this is a valid request
-  if (req.query.secret !== process.env.REVALIDATE_TOKEN) {
+  if (!inboundRevalToken) {
+    return res
+      .status(401)
+      .json({ message: "x-vercel-reval-key header not defined" });
+  } else if (inboundRevalToken !== process.env.REVALIDATE_TOKEN) {
     return res.status(401).json({ message: "Invalid token" });
   }
 
