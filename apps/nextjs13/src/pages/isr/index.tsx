@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { getAllBlogPosts } from "contentful";
-import { BlogPosts } from "ui";
+import BlogPosts from "../../components/BlogPosts";
 import { BlogPosts as BlogPostsType } from "contentful";
 
 export async function getStaticProps() {

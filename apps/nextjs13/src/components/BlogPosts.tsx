@@ -1,4 +1,4 @@
-import * as React from "react";
+import Link from "next/link";
 import dayjs from "dayjs";
 import type { BlogPost, BlogPosts as BlogPostsType } from "contentful";
 
@@ -17,7 +17,7 @@ const fetchingType = (type: FetchingType) => {
   }
 };
 
-export const BlogPosts = ({
+const BlogPosts = ({
   posts,
   type,
 }: {
@@ -25,29 +25,33 @@ export const BlogPosts = ({
   type: FetchingType;
 }) => {
   return (
-    <div className="ui-divide-y ui-divide-zinc-600 ui-space-y-10">
+    <div className="divide-y divide-zinc-600 space-y-10">
       <div>
-        <h1 className="ui-text-6xl ui-font-extrabold ui-tracking-tight ui-text-white sm:ui-text-7xl lg:ui-text-8xl xl:ui-text-8xl">
-          <span className="ui-bg-gradient-to-r ui-from-brandred ui-to-brandblue ui-bg-clip-text ui-text-transparent">
+        <h1 className="text-6xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-8xl xl:text-8xl">
+          <span className="bg-gradient-to-r from-brandred to-brandblue bg-clip-text text-transparent">
             {type.toUpperCase()} Blog
           </span>
         </h1>
 
-        <p className="ui-mt-5 ui-text-xl ui-text-zinc-400">
+        <p className="mt-5 text-xl text-zinc-400">
           Posts that are listed using {fetchingType(type)}
         </p>
       </div>
       <div>
         {posts.map((post: BlogPost) => (
-          <div key={post.slug} className="ui-mt-14">
-            <h2 className="ui-text-3xl ">{post.title}</h2>
-            <p className="ui-mt-2 ui-text-zinc-300">{post.description}</p>
-            <p className="ui-mt-1.5 ui-text-zinc-500 ui-text-xs">
-              {dayjs(post.sys.firstPublishedAt).format("MMMM D, YYYY")}
-            </p>
+          <div key={post.slug} className="mt-14">
+            <Link key={post.slug} href={`/${type}/${post.slug}`}>
+              <h2 className="text-3xl ">{post.title}</h2>
+              <p className="mt-2 text-zinc-300">{post.description}</p>
+              <p className="mt-1.5 text-zinc-500 text-xs">
+                {dayjs(post.sys.firstPublishedAt).format("MMMM D, YYYY")}
+              </p>
+            </Link>
           </div>
         ))}
       </div>
     </div>
   );
 };
+
+export default BlogPosts;

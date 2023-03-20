@@ -1,11 +1,10 @@
 import Head from "next/head";
 import { getAllBlogPosts } from "contentful";
-import { BlogPosts } from "ui";
+import BlogPosts from "../../components/BlogPosts";
 import { BlogPosts as BlogPostsType } from "contentful";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const posts = await getAllBlogPosts();
-
   return {
     props: {
       posts,
@@ -13,13 +12,13 @@ export async function getServerSideProps() {
   };
 }
 
-export default function SSR({ posts }: { posts: BlogPostsType }) {
+export default function SSG({ posts }: { posts: BlogPostsType }) {
   return (
     <>
       <Head>
-        <title>SSR Blog</title>
+        <title>SSG Blog</title>
       </Head>
-      <BlogPosts posts={posts} type="ssr" />
+      <BlogPosts posts={posts} type="ssg" />
     </>
   );
 }

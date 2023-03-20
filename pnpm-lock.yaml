@@ -60,6 +60,7 @@ importers:
       '@types/react-dom': ^18.0.9
       autoprefixer: ^10.4.13
       contentful: workspace:*
+      dayjs: workspace:*
       eslint-config-custom: workspace:*
       next: latest
       postcss: ^8.4.20
@@ -72,6 +73,7 @@ importers:
       ui: workspace:*
     dependencies:
       contentful: link:../../packages/contentful
+      dayjs: link:../../packages/dayjs
       next: 13.2.4_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -147,6 +149,12 @@ importers:
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
       typescript: 4.9.4
+
+  packages/dayjs:
+    specifiers:
+      dayjs: ^1.11.7
+    devDependencies:
+      dayjs: 1.11.7
 
   packages/eslint-config-custom:
     specifiers:

@@ -28,4 +28,33 @@ async function getAllBlogPosts() {
   }
 }
 
-export { getAllBlogPosts, BlogPost, BlogPosts };
+async function getBlogPostBySlug(slug: string) {
+  try {
+    const { data } = await apolloClient.query({
+      query: gql`
+        query GetBlogPostBySlug($slug: String!) {
+          blogPostCollection(where: { slug: $slug }) {
+            items {
+              sys {
+                id
+                firstPublishedAt
+              }
+              title
+              slug
+              description
+              content
+            }
+          }
+        }
+      `,
+      variables: {
+        slug,
+      },
+    });
+    return data.blogPostCollection.items[0];
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+export { getAllBlogPosts, getBlogPostBySlug, BlogPost, BlogPosts };
