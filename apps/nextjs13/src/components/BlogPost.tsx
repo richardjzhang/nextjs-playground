@@ -12,7 +12,9 @@ export default function BlogPost({ post }: { post: BlogPostType }) {
         </h1>
         <p className="mt-5 text-2xl text-zinc-300">{post.description}</p>
         <p className="mt-2 text-zinc-400">
-          {dayjs(post.sys.firstPublishedAt).format("MMMM D, YYYY")}
+          {dayjs(post.sys.firstPublishedAt || new Date()).format(
+            "MMMM D, YYYY"
+          )}
         </p>
       </div>
       <div className="divide-zinc-600 py-10">

@@ -6,17 +6,17 @@ const CARD_CONTENT = [
   {
     title: "Server Side Rendering",
     href: "/ssr",
-    cta: "See SSR",
+    cta: "Always pre-render at each request",
   },
   {
     title: "Static Site Generation",
     href: "/ssg",
-    cta: "See SSG",
+    cta: "Pre-render at build time",
   },
   {
     title: "Incremental Static Regeneration",
     href: "/isr",
-    cta: "See ISR",
+    cta: "Pre-render at build time and regenerate on demand",
   },
 ];
 

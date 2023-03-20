@@ -19,7 +19,10 @@ export default async function handler(
   try {
     // this should be the actual path not a rewritten path
     // e.g. for "/blog/[slug]" this should be "/blog/post-1"
-    await res.revalidate("/isr");
+    await Promise.all([
+      res.revalidate("/isr"),
+      res.revalidate(`/isr/${req.body.slug}`),
+    ]);
     return res.json({ revalidated: true });
   } catch (err) {
     // If there was an error, Next.js will continue
