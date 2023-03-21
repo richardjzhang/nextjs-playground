@@ -1,6 +1,6 @@
-# Turborepo Tailwind CSS starter
+# Next.js Playground
 
-This is an official starter Turborepo.
+This is a playground for Next.js features
 
 ## What's inside?
 
@@ -8,9 +8,16 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `web`: another [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by both `web` and `docs` applications
+**Apps**
+
+- `nextjs13`: a [Next.js 13](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
+- `nextjs13 app router`: a [Next.js 13](https://nextjs.org/) app that uses the app router with [Tailwind CSS](https://tailwindcss.com/)
+
+**Packages**
+
+- `contentful`: a package for pulling blog data from [Contentful](https://www.contentful.com/)
+- `dayjs`: a package that uses the date utility library [Day.js](https://day.js.org/)
+- `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by all Next.js apps
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
@@ -42,13 +49,11 @@ This Turborepo has some additional tools already setup for you:
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 
-## Using this example
+## Getting started
 
-Run the following command:
+Run the following commands to get the project running:
 
 ```sh
-npx degit vercel/turbo/examples/with-tailwind with-tailwind
-cd with-tailwind
 pnpm install
-git init . && git add . && git commit -m "Init"
+pnpm dev
 ```
