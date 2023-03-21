@@ -54,6 +54,29 @@ async function getBlogPostBySlug(slug: string) {
   }
 }
 
+// Needed because it seems like the static json is linked with the ISR version
+async function getStaticBlogPostBySlug(slug: string) {
+  try {
+    const { data } = await apolloClient().query({
+      query: gql`
+        query GetStaticBlogPostBySlug($slug: String!) {
+          blogPostCollection(where: { slug: $slug }) {
+            items {
+              ${GRAPHQL_FIELDS}
+            }
+          }
+        }
+      `,
+      variables: {
+        slug,
+      },
+    });
+    return data.blogPostCollection.items[0];
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 async function getPreviewBlogPostBySlug(slug: string) {
   try {
     const { data } = await apolloClient(true).query({
@@ -79,6 +102,7 @@ async function getPreviewBlogPostBySlug(slug: string) {
 export {
   getAllBlogPosts,
   getBlogPostBySlug,
+  getStaticBlogPostBySlug,
   getPreviewBlogPostBySlug,
   BlogPost,
   BlogPosts,

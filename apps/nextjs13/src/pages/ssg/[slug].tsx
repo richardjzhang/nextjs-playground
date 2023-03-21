@@ -2,7 +2,7 @@ import Head from "next/head";
 import {
   type BlogPost as BlogPostType,
   getAllBlogPosts,
-  getBlogPostBySlug,
+  getStaticBlogPostBySlug,
 } from "contentful";
 import BlogPost from "../../components/BlogPost";
 
@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const post = await getBlogPostBySlug(params.slug);
+  const post = await getStaticBlogPostBySlug(params.slug);
   return {
     props: {
       post,
