@@ -1,13 +1,13 @@
 import Head from "next/head";
 import {
   type BlogPost as BlogPostType,
-  getAllBlogPosts,
-  getBlogPostBySlug,
+  getAllStaticBlogPosts,
+  getStaticBlogPostBySlug,
 } from "contentful";
 import BlogPost from "../../components/BlogPost";
 
 export async function getStaticPaths() {
-  const posts = await getAllBlogPosts();
+  const posts = await getAllStaticBlogPosts();
   const paths = posts.map((post) => ({
     params: { slug: post.slug },
   }));
@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const post = await getBlogPostBySlug({ slug: params.slug, isStatic: true });
+  const post = await getStaticBlogPostBySlug(params.slug);
   return {
     props: {
       post,

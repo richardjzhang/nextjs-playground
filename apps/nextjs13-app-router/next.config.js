@@ -3,5 +3,5 @@ module.exports = {
   images: {
     domains: ["images.ctfassets.net"],
   },
-  transpilePackages: ["ui", "contentful"],
+  transpilePackages: ["ui", "contentful", "dayjs"],
 };

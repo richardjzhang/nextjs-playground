@@ -57,3 +57,14 @@ Run the following commands to get the project running:
 pnpm install
 pnpm dev
 ```
+
+## Running a build
+
+Run the following commands to get a build running:
+
+```sh
+pnpm install
+pnpm build
+```
+
+If deploying on Vercel, you can also enable [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share builds across your team and CI
