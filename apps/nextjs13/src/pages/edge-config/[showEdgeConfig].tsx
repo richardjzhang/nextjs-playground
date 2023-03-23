@@ -4,11 +4,11 @@ import Image from "next/image";
 import { Title } from "ui";
 
 interface Params extends ParsedUrlQuery {
-  country: string;
+  showEdgeConfig: string;
 }
 
 interface Props {
-  country: string;
+  showEdgeConfig: boolean;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -20,26 +20,28 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<unknown, Params> = async ({
-  params: { country },
+  params: { showEdgeConfig },
 }) => {
   return {
     props: {
-      country,
+      showEdgeConfig: showEdgeConfig === "true",
     },
     revalidate: false,
   };
 };
 
-export default function EdgeMiddleware({ country }: Props) {
+export default function EdgeConfig({ showEdgeConfig }: Props) {
   return (
-    <div className="flex flex-col justify-center items-center">
-      <Title>Where am I?</Title>
+    <div className="flex flex-col items-center">
+      <Title>Edge Config</Title>
       <Image
-        className="mt-16"
-        src={`/flags/${country}.svg`}
-        alt="Flag"
-        width={300}
-        height={200}
+        className="mt-12"
+        alt="Edge config image"
+        src={
+          showEdgeConfig ? "/homer-simpson-reverse.gif" : "/homer-simpson.gif"
+        }
+        height={600}
+        width={600}
       />
     </div>
   );

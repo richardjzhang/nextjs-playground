@@ -5,7 +5,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <div className="py-5 border-b border-zinc-600">
-        <div className="mx-auto px-4 max-w-5xl text-white lg:px-8">
+        <div className="mx-auto px-4 max-w-4xl text-white lg:px-8">
           <Link href="/">
             <Image
               alt="Vercel Logo"
@@ -16,7 +16,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </Link>
         </div>
       </div>
-      <main className="mx-auto flex flex-col w-full max-w-5xl px-4 pt-16 pb-8 text-white sm:pt-24 lg:px-8">
+      <main className="mx-auto flex flex-col w-full max-w-4xl px-4 pt-16 pb-8 text-white sm:pt-24 lg:px-8">
         {children}
       </main>
     </>
