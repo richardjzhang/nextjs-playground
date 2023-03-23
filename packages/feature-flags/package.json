@@ -6,7 +6,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@vercel/edge-config": "^0.1.5"
+  "devDependencies": {
+    "@vercel/edge-config": "^0.1.5",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*"
   }
 }
