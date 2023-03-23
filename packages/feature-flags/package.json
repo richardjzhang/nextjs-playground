@@ -1,0 +1,12 @@
+{
+  "name": "feature-flags",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/edge-config": "^0.1.5"
+  }
+}

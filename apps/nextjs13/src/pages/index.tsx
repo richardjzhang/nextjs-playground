@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { Card } from "ui";
 
-const CARD_CONTENT = [
+const FETCHING_CARD_CONTENT = [
   {
     title: "Server Side Rendering",
     href: "/ssr",
@@ -20,6 +20,24 @@ const CARD_CONTENT = [
   },
 ];
 
+const EDGE_CARD_CONTENT = [
+  {
+    title: "Edge Functions",
+    href: "/edge-functions",
+    cta: "Run code at the edge",
+  },
+  {
+    title: "Edge Config",
+    href: "/edge-config",
+    cta: "Ultra low-latency data at the edge",
+  },
+  {
+    title: "Edge Middleware",
+    href: "/edge-middleware",
+    cta: "Run code before a request is completed",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -33,12 +51,28 @@ export default function Home() {
           </span>
         </h1>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly">
-          {CARD_CONTENT.map((card) => (
-            <Link key={card.title} className="h-full" href={card.href}>
-              <Card {...card} />
-            </Link>
-          ))}
+        <div className="mt-16 border-t border-zinc-600 py-12 w-full">
+          <h2 className="text-2xl font-semibold text-zinc-300">
+            Data Fetching
+          </h2>
+          <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly">
+            {FETCHING_CARD_CONTENT.map((card) => (
+              <Link key={card.title} className="h-full" href={card.href}>
+                <Card {...card} />
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div className="border-t border-zinc-600 py-12 w-full">
+          <h2 className="text-2xl font-semibold text-zinc-300">Edge Compute</h2>
+          <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly">
+            {EDGE_CARD_CONTENT.map((card) => (
+              <Link key={card.title} className="h-full" href={card.href}>
+                <Card {...card} />
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </>

@@ -132,6 +132,12 @@ importers:
       eslint-config-turbo: 0.0.10_eslint@7.32.0
       eslint-plugin-react: 7.28.0_eslint@7.32.0
 
+  packages/feature-flags:
+    specifiers:
+      '@vercel/edge-config': ^0.1.5
+    dependencies:
+      '@vercel/edge-config': 0.1.5
+
   packages/tailwind-config:
     specifiers:
       tailwindcss: ^3.2.4
@@ -551,6 +557,11 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.44.0
       eslint-visitor-keys: 3.3.0
+    dev: false
+
+  /@vercel/edge-config/0.1.5:
+    resolution: {integrity: sha512-hwOkwwSIQe+DlCU8aHGzGl4L67fNNekZ/kVcCl9VVORehJxSEn6npoK0xx85vyF4c9Q2BnlnJDZ7CLPtN0oQHw==}
+    engines: {node: '>=14.6'}
     dev: false
 
   /@wry/context/0.7.0:

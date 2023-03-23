@@ -7,11 +7,11 @@ import {
 import BlogPost from "../../components/BlogPost";
 
 export async function getStaticPaths() {
-  const posts = await getAllBlogPosts();
-  const paths = posts.map((post) => ({
-    params: { slug: post.slug },
-  }));
-  return { paths, fallback: false };
+  // We don't want to specify any preview blog posts
+  return {
+    paths: [],
+    fallback: "blocking",
+  };
 }
 
 export async function getStaticProps({ params }) {
