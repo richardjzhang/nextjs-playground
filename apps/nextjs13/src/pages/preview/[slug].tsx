@@ -1,27 +1,34 @@
+import type { GetStaticPaths, GetStaticProps } from "next";
+import type { ParsedUrlQuery } from "querystring";
 import Head from "next/head";
 import {
   type BlogPost as BlogPostType,
-  getAllBlogPosts,
   getPreviewBlogPostBySlug,
 } from "contentful";
 import BlogPost from "../../components/BlogPost";
 
-export async function getStaticPaths() {
+interface Params extends ParsedUrlQuery {
+  slug: string;
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
   // We don't want to specify any preview blog posts
   return {
     paths: [],
     fallback: "blocking",
   };
-}
+};
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps<unknown, Params> = async ({
+  params,
+}) => {
   const post = await getPreviewBlogPostBySlug(params.slug);
   return {
     props: {
       post,
     },
   };
-}
+};
 
 function PreviewPost({ post }: { post: BlogPostType }) {
   return (
