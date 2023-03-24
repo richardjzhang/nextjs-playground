@@ -1,5 +1,5 @@
 {
-  "name": "dayjs",
+  "name": "openai",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,8 +7,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "dayjs": "^1.11.7",
+    "@types/node": "^18.11.17",
     "eslint-config-custom": "workspace:*",
+    "eventsource-parser": "^1.0.0",
     "tsconfig": "workspace:*"
   }
 }

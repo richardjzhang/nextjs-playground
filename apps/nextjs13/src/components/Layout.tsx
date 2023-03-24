@@ -1,22 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
+import { DeployButton } from "ui";
+
+const HORIZONTAL_RESPONSIVE_STYLES = "mx-auto max-w-4xl px-4 lg:px-8";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <div className="py-5 border-b border-zinc-600">
-        <div className="mx-auto px-4 max-w-5xl text-white lg:px-8">
-          <Link href="/">
+      <nav className="py-5 border-b border-zinc-600">
+        <div
+          className={`${HORIZONTAL_RESPONSIVE_STYLES} flex items-center text-white`}
+        >
+          <Link className="flex items-center" href="/">
             <Image
               alt="Vercel Logo"
-              src="/vercel-icon-light.png"
-              width={32}
-              height={32}
+              src="/nextjs-icon-dark-background.png"
+              width={36}
+              height={36}
             />
           </Link>
+          <div className="ml-auto">
+            <DeployButton />
+          </div>
         </div>
-      </div>
-      <main className="mx-auto flex flex-col w-full max-w-5xl px-4 pt-16 pb-8 text-white sm:pt-24 lg:px-8">
+      </nav>
+      <main
+        className={`${HORIZONTAL_RESPONSIVE_STYLES} flex flex-col w-full pt-16 pb-8 text-white sm:pt-24`}
+      >
         {children}
       </main>
     </>

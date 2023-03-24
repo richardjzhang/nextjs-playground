@@ -1,6 +1,7 @@
 import Link from "next/link";
 import dayjs from "dayjs";
 import type { BlogPost, BlogPosts as BlogPostsType } from "contentful";
+import { Title } from "ui";
 
 type FetchingType = "ssg" | "ssr" | "isr";
 
@@ -27,12 +28,7 @@ const BlogPosts = ({
   return (
     <div className="divide-y divide-zinc-600 space-y-10">
       <div>
-        <h1 className="text-6xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-8xl xl:text-8xl">
-          <span className="bg-gradient-to-r from-brandred to-brandblue bg-clip-text text-transparent">
-            {type.toUpperCase()} Blog
-          </span>
-        </h1>
-
+        <Title>{type.toUpperCase()} Blog</Title>
         <p className="mt-5 text-xl text-zinc-400">
           Posts that are listed using {fetchingType(type)}
         </p>

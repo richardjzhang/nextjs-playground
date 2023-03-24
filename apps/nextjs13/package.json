@@ -9,12 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/edge-config": "^0.1.5",
+    "contentful": "workspace:*",
+    "dayjs": "workspace:*",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "ui": "workspace:*",
-    "contentful": "workspace:*",
-    "dayjs": "workspace:*"
+    "openai": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^18.11.17",

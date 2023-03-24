@@ -51,7 +51,8 @@ This Turborepo has some additional tools already setup for you:
 
 ## Getting started
 
-Run the following commands to get the project running:
+1. Make sure you've created a `.env` file with all the listed variables in the `.env.example` file
+2. Run the following commands to get the project running:
 
 ```sh
 pnpm install
