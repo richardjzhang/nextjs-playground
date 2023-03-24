@@ -25,7 +25,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </div>
       </nav>
       <main
-        className={`${HORIZONTAL_RESPONSIVE_STYLES} flex flex-col w-full pt-16 pb-8 text-white sm:pt-24`}
+        className={`${HORIZONTAL_RESPONSIVE_STYLES} flex flex-col w-full pt-16 pb-8 text-white`}
       >
         {children}
       </main>

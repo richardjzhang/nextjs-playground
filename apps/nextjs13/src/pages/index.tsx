@@ -43,6 +43,7 @@ export default function Home() {
     <>
       <Head>
         <title>Next.js 13</title>
+        <meta name="description" content="Features of Next.js 13" />
       </Head>
       <div className="block my-auto w-full h-full">
         <h1 className="mx-auto text-center text-6xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-8xl xl:text-8xl">
@@ -51,7 +52,7 @@ export default function Home() {
           </span>
         </h1>
 
-        <div className="mt-16 border-t border-zinc-600 py-12 w-full">
+        <div className="mt-16 w-full">
           <h2 className="text-2xl font-semibold text-zinc-300">
             Data Fetching
           </h2>
@@ -64,7 +65,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="border-t border-zinc-600 py-12 w-full">
+        <div className="mt-16 w-full">
           <h2 className="text-2xl font-semibold text-zinc-300">Edge Compute</h2>
           <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly">
             {EDGE_CARD_CONTENT.map((card) => (
