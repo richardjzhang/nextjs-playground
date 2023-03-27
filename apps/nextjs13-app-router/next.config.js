@@ -3,7 +3,7 @@ module.exports = {
   images: {
     domains: ["images.ctfassets.net"],
   },
-  transpilePackages: ["ui", "contentful", "dayjs"],
+  transpilePackages: ["ui", "contentful", "dayjs", "openai"],
   experimental: {
     appDir: true,
   },

@@ -13,7 +13,3 @@ export const LoadingDots = ({
     </span>
   );
 };
-
-LoadingDots.defaultProps = {
-  style: "small",
-};

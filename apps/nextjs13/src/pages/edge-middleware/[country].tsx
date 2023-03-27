@@ -3,6 +3,8 @@ import type { ParsedUrlQuery } from "querystring";
 import Image from "next/image";
 import { Title } from "ui";
 
+const COMMON_COUNTRIES = ["au", "gb", "sg", "jp", "us"];
+
 interface Params extends ParsedUrlQuery {
   country: string;
 }
@@ -12,9 +14,12 @@ interface Props {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // We don't want to specify all possible countries as we get those from the headers
   return {
-    paths: [],
+    paths: COMMON_COUNTRIES.map((country) => ({
+      params: {
+        country,
+      },
+    })),
     fallback: "blocking",
   };
 };

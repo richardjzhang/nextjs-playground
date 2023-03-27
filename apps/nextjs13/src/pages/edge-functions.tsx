@@ -10,7 +10,7 @@ export default function EdgeFunctions() {
   const [answer, setAnswer] = useState<string>("");
   const answerRef = useRef<null | HTMLDivElement>(null);
 
-  const scrollToBios = () => {
+  const scrollToAnswer = () => {
     if (answerRef.current !== null) {
       answerRef.current.scrollIntoView({ behavior: "smooth" });
     }
@@ -56,7 +56,7 @@ export default function EdgeFunctions() {
       const chunkValue = decoder.decode(value);
       setAnswer((prev) => prev + chunkValue);
     }
-    scrollToBios();
+    scrollToAnswer();
     setLoading(false);
   };
 

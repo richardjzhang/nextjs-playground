@@ -12,9 +12,11 @@ interface Props {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // We don't want to specify all possible countries as we get those from the headers
   return {
-    paths: [],
+    paths: [
+      { params: { showEdgeConfig: "true" } },
+      { params: { showEdgeConfig: "false" } },
+    ],
     fallback: "blocking",
   };
 };

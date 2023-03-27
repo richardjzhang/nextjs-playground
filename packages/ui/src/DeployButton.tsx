@@ -4,7 +4,7 @@ export const DeployButton = () => {
   return (
     <a
       target="_blank"
-      href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frichardjzhang%2Fnextjs-playground&demo-url=https%3A%2F%2Fwatchthis.dev"
+      href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frichardjzhang%2Fnextjs-playground"
       className="ui-text-black hover:ui-bg-black hover:ui-text-white hover:ui-border-white ui-border ui-bg-white ui-shadow ui-font-medium ui-rounded ui-p-2 ui-text-sm ui-flex ui-items-center"
     >
       <svg

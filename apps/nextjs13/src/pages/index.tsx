@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { Card } from "ui";
+import { Card, Title } from "ui";
 
 const FETCHING_CARD_CONTENT = [
   {
@@ -46,11 +46,7 @@ export default function Home() {
         <meta name="description" content="Features of Next.js 13" />
       </Head>
       <div className="block my-auto w-full h-full">
-        <h1 className="mx-auto text-center text-6xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-8xl xl:text-8xl">
-          <span className="bg-gradient-to-r from-brandred to-brandblue bg-clip-text text-transparent">
-            Next.js 13
-          </span>
-        </h1>
+        <Title center>Next.js 13</Title>
 
         <div className="mt-16 w-full">
           <h2 className="text-2xl font-semibold text-zinc-300">
@@ -65,7 +61,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-16 w-full">
+        <div className="mt-12 w-full">
           <h2 className="text-2xl font-semibold text-zinc-300">Edge Compute</h2>
           <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly">
             {EDGE_CARD_CONTENT.map((card) => (
