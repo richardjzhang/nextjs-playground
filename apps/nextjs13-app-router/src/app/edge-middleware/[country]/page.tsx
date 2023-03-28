@@ -7,6 +7,11 @@ interface Props {
   };
 }
 
+export const metadata = {
+  title: "Edge Middleware",
+  description: "Edge Middleware - Where am I?",
+};
+
 export async function generateStaticParams() {
   return [
     { country: "au" },

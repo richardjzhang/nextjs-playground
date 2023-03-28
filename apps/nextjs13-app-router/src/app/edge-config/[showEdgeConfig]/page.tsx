@@ -1,6 +1,11 @@
 import Image from "next/image";
 import { Title } from "ui";
 
+export const metadata = {
+  title: "Edge Config",
+  description: "Edge Config - Nothing to see here",
+};
+
 interface Props {
   params: {
     showEdgeConfig: string;

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRef, useState } from "react";
 import { LoadingDots, Title } from "ui";
 
@@ -61,41 +62,47 @@ export default function EdgeFunctions() {
   };
 
   return (
-    <div>
-      <Title>Frontend Expert</Title>
-      <div className="mt-12">
-        <h2 className="mb-4 text-xl font-semibold text-zinc-300">
-          Ask a question
-        </h2>
-        <textarea
-          value={question}
-          onChange={(e) => setQuestion(e.target.value)}
-          rows={4}
-          className="p-4 w-full rounded-md border-gray-300 shadow-sm text-black focus:border-zinc-300 focus:ring-zinc-300"
-          placeholder={"e.g. What are Edge Functions in Next.js?"}
-        />
-      </div>
-      {!loading && (
-        <button
-          className={SUBMIT_BUTTON_STYLE}
-          onClick={(e) => generateAnswer(e)}
-        >
-          Submit
-        </button>
-      )}
-      {loading && (
-        <button className={SUBMIT_BUTTON_STYLE} disabled>
-          <LoadingDots color="white" style="large" />
-        </button>
-      )}
-      {answer && (
-        <div ref={answerRef} className="mt-12">
-          <h2 className="mb-4 text-xl font-semibold text-zinc-300">Answer</h2>
-          <div className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border text-black">
-            <p>{answer}</p>
-          </div>
+    <>
+      <Head>
+        <title>Edge Functions</title>
+        <meta name="description" content="Edge Functions - Ask a question" />
+      </Head>
+      <div>
+        <Title>Frontend Expert</Title>
+        <div className="mt-12">
+          <h2 className="mb-4 text-xl font-semibold text-zinc-300">
+            Ask a question
+          </h2>
+          <textarea
+            value={question}
+            onChange={(e) => setQuestion(e.target.value)}
+            rows={4}
+            className="p-4 w-full rounded-md border-gray-300 shadow-sm text-black focus:border-zinc-300 focus:ring-zinc-300"
+            placeholder={"e.g. What are Edge Functions in Next.js?"}
+          />
         </div>
-      )}
-    </div>
+        {!loading && (
+          <button
+            className={SUBMIT_BUTTON_STYLE}
+            onClick={(e) => generateAnswer(e)}
+          >
+            Submit
+          </button>
+        )}
+        {loading && (
+          <button className={SUBMIT_BUTTON_STYLE} disabled>
+            <LoadingDots color="white" style="large" />
+          </button>
+        )}
+        {answer && (
+          <div ref={answerRef} className="mt-12">
+            <h2 className="mb-4 text-xl font-semibold text-zinc-300">Answer</h2>
+            <div className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border text-black">
+              <p>{answer}</p>
+            </div>
+          </div>
+        )}
+      </div>
+    </>
   );
 }

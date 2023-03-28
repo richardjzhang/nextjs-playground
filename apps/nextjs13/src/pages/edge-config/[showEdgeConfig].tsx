@@ -1,4 +1,5 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
+import Head from "next/head";
 import type { ParsedUrlQuery } from "querystring";
 import Image from "next/image";
 import { Title } from "ui";
@@ -34,17 +35,23 @@ export const getStaticProps: GetStaticProps<unknown, Params> = async ({
 
 export default function EdgeConfig({ showEdgeConfig }: Props) {
   return (
-    <div className="flex flex-col items-center">
-      <Title>Edge Config</Title>
-      <Image
-        className="mt-12"
-        alt="Edge config image"
-        src={
-          showEdgeConfig ? "/homer-simpson-reverse.gif" : "/homer-simpson.gif"
-        }
-        height={600}
-        width={600}
-      />
-    </div>
+    <>
+      <Head>
+        <title>Edge Config</title>
+        <meta name="description" content="Edge Config - Nothing to see here" />
+      </Head>
+      <div className="flex flex-col items-center">
+        <Title>Edge Config</Title>
+        <Image
+          className="mt-12"
+          alt="Edge config image"
+          src={
+            showEdgeConfig ? "/homer-simpson-reverse.gif" : "/homer-simpson.gif"
+          }
+          height={600}
+          width={600}
+        />
+      </div>
+    </>
   );
 }

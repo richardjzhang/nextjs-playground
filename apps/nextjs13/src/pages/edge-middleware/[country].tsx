@@ -1,4 +1,5 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
+import Head from "next/head";
 import type { ParsedUrlQuery } from "querystring";
 import Image from "next/image";
 import { Title } from "ui";
@@ -37,15 +38,21 @@ export const getStaticProps: GetStaticProps<unknown, Params> = async ({
 
 export default function EdgeMiddleware({ country }: Props) {
   return (
-    <div className="flex flex-col justify-center items-center">
-      <Title>Where am I?</Title>
-      <Image
-        className="mt-16"
-        src={`/flags/${country}.svg`}
-        alt="Flag"
-        width={300}
-        height={200}
-      />
-    </div>
+    <>
+      <Head>
+        <title>Edge Middleware</title>
+        <meta name="description" content="Edge Middleware - Where am I?" />
+      </Head>
+      <div className="flex flex-col justify-center items-center">
+        <Title>Where am I?</Title>
+        <Image
+          className="mt-16"
+          src={`/flags/${country}.svg`}
+          alt="Flag"
+          width={300}
+          height={200}
+        />
+      </div>{" "}
+    </>
   );
 }
