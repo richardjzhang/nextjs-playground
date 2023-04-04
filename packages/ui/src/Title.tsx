@@ -15,7 +15,7 @@ export function Title({
         "ui-text-6xl ui-font-extrabold ui-tracking-tight ui-text-white sm:ui-text-7xl lg:ui-text-8xl xl:ui-text-8xl"
       )}
     >
-      <span className="ui-bg-gradient-to-r ui-from-brandred ui-to-brandblue ui-bg-clip-text ui-text-transparent">
+      <span className="ui-bg-gradient-to-r ui-from-blue-500 ui-to-emerald-500 ui-bg-clip-text ui-text-transparent">
         {children}
       </span>
     </h1>
