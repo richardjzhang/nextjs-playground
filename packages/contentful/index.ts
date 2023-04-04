@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 import apolloClient from "./apollo-client";
-import type { BlogPost, BlogPosts } from "./types";
+import type { BlogPost, BlogPosts, RawBlogPosts, RawBlogPost } from "./types";
 
 const GRAPHQL_FIELDS = `
 sys {
@@ -127,4 +127,6 @@ export {
   getPreviewBlogPostBySlug,
   BlogPost,
   BlogPosts,
+  RawBlogPost,
+  RawBlogPosts,
 };

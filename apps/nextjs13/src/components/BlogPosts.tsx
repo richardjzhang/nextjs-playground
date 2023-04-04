@@ -36,7 +36,7 @@ const BlogPosts = ({
       <div>
         {posts.map((post: BlogPost) => (
           <div key={post.slug} className="mt-14">
-            <Link key={post.slug} href={`/${type}/${post.slug}`}>
+            <Link href={`/${type}/${post.slug}`}>
               <h2 className="text-3xl ">{post.title}</h2>
               <p className="mt-2 text-zinc-300">{post.description}</p>
               <p className="mt-1.5 text-zinc-500 text-xs">
