@@ -27,11 +27,12 @@ const EDGE_CARD_CONTENT = [
     href: "/edge-functions",
     cta: "Run code at the edge",
   },
-  {
-    title: "Edge Config",
-    href: "/edge-config",
-    cta: "Ultra low-latency data at the edge",
-  },
+  // Currently broken
+  // {
+  //   title: "Edge Config",
+  //   href: "/edge-config",
+  //   cta: "Ultra low-latency data at the edge",
+  // },
   {
     title: "Edge Middleware",
     href: "/edge-middleware",
@@ -50,7 +51,7 @@ export default function Home() {
 
       <div className="mt-16 w-full">
         <h2 className="text-2xl font-semibold text-zinc-300">Edge Compute</h2>
-        <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly">
+        <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4 place-content-evenly">
           {EDGE_CARD_CONTENT.map((card) => (
             <Link key={card.title} className="h-full" href={card.href}>
               <Card {...card} />
