@@ -3,24 +3,6 @@ import Link from "next/link";
 import { Card, Title } from "ui";
 import BlogPosts from "../components/BlogPosts";
 
-const FETCHING_CARD_CONTENT = [
-  {
-    title: "Caching Tasks",
-    href: "https://turbo.build/repo/docs/core-concepts/caching",
-    cta: "Read More",
-  },
-  {
-    title: "Running Tasks",
-    href: "https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks",
-    cta: "Read More",
-  },
-  {
-    title: "Configuration Options",
-    href: "https://turbo.build/repo/docs/reference/configuration",
-    cta: "Read More",
-  },
-];
-
 const EDGE_CARD_CONTENT = [
   {
     title: "Edge Functions",

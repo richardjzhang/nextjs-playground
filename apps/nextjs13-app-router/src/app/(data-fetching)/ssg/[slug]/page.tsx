@@ -1,4 +1,4 @@
-import BlogPost from "../../../components/BlogPost";
+import BlogPost from "../../../../components/BlogPost";
 
 async function fetcher(url: string) {
   const res = await fetch(url, { cache: "force-cache" });
