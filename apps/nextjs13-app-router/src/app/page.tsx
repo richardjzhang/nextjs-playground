@@ -27,12 +27,11 @@ const EDGE_CARD_CONTENT = [
     href: "/edge-functions",
     cta: "Run code at the edge",
   },
-  // Currently broken
-  // {
-  //   title: "Edge Config",
-  //   href: "/edge-config",
-  //   cta: "Ultra low-latency data at the edge",
-  // },
+  {
+    title: "Edge Config",
+    href: "/edge-config",
+    cta: "Ultra low-latency data at the edge",
+  },
   {
     title: "Edge Middleware",
     href: "/edge-middleware",
