@@ -43,7 +43,7 @@ export default function Home() {
 
       <div className="mt-16 w-full">
         <h2 className="text-2xl font-semibold text-zinc-300">
-          Server Side Rendering
+          Dynamic component
         </h2>
         <div className="mt-5 grid grid-cols-1 gap-4 place-content-evenly">
           {/* @ts-expect-error Server Component */}
@@ -53,7 +53,7 @@ export default function Home() {
 
       <div className="mt-16 w-full">
         <h2 className="text-2xl font-semibold text-zinc-300">
-          Static Site Generation
+          Static component
         </h2>
         <div className="mt-5 grid grid-cols-1 gap-4 place-content-evenly">
           {/* @ts-expect-error Server Component */}
@@ -63,7 +63,7 @@ export default function Home() {
 
       <div className="mt-16 w-full">
         <h2 className="text-2xl font-semibold text-zinc-300">
-          Incremental Static Regeneration
+          Revalidating static component
         </h2>
         <div className="mt-5 grid grid-cols-1 gap-4 place-content-evenly">
           {/* @ts-expect-error Server Component */}

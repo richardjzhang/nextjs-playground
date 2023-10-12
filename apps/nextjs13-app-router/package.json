@@ -12,7 +12,7 @@
     "@vercel/edge-config": "^0.1.5",
     "contentful": "workspace:*",
     "dayjs": "workspace:*",
-    "next": "^13.4.4",
+    "next": "^13.5.4",
     "openai": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
