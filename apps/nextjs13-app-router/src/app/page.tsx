@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { Card, Title } from "ui";
 import BlogPosts from "../components/BlogPosts";
+import Streaming from "./(data-fetching)/streaming/Streaming";
 
 const EDGE_CARD_CONTENT = [
   {
@@ -38,6 +39,15 @@ export default function Home() {
               <Card {...card} />
             </Link>
           ))}
+        </div>
+      </div>
+
+      <div className="mt-16 w-full">
+        <h2 className="text-2xl font-semibold text-zinc-300">Streaming</h2>
+        <div className="mt-5 grid grid-cols-1 gap-4 place-content-evenly">
+          <Link className="h-full" href="/streaming">
+            <Card title="Streaming" cta="Demonstrating streaming in Next.js" />
+          </Link>
         </div>
       </div>
 
