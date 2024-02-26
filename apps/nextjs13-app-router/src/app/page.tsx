@@ -32,7 +32,7 @@ export default function Home() {
       <Title center>App Router</Title>
 
       <div className="mt-16 w-full">
-        <h2 className="text-2xl font-semibold text-zinc-300">Data Caching</h2>
+        <h2 className="text-2xl font-semibold text-zinc-300">Data Fetching</h2>
         <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4 place-content-evenly">
           <Link className="h-full" href="/streaming">
             <Card title="Streaming" cta="Demonstrating streaming in Next.js" />
