@@ -22,7 +22,7 @@ export default function Streaming() {
             fallback={
               <Card>
                 <div className="h-full flex justify-center items-center text-xl text-white">
-                  ...
+                  Waiting for data...
                 </div>
               </Card>
             }

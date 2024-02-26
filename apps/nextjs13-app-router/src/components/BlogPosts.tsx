@@ -1,17 +1,45 @@
 import Link from "next/link";
 import dayjs from "dayjs";
 import type { RawBlogPost } from "contentful";
+import { Card, Title } from "ui";
 
-type FetchingType = "ssg" | "ssr" | "isr";
+type FetchingType = "force-cache" | "no-store" | "revalidate";
 
 const getFetchPayload = (type: FetchingType): RequestInit => {
   switch (type) {
-    case "ssg":
+    case "force-cache":
       return { cache: "force-cache" };
-    case "ssr":
+    case "no-store":
       return { cache: "no-store" };
-    case "isr":
+    case "revalidate":
       return { next: { revalidate: 10 } };
+    default:
+      throw new Error("Invalid type");
+  }
+};
+
+const getFetchContent = (
+  type: FetchingType
+): {
+  title: string;
+  description: string;
+} => {
+  switch (type) {
+    case "force-cache":
+      return {
+        title: "Static Data",
+        description: "Static data is served from the cache.",
+      };
+    case "no-store":
+      return {
+        title: "Dynamic Data",
+        description: "Data is not stored in the cache.",
+      };
+    case "revalidate":
+      return {
+        title: "Revalidated Data",
+        description: "Data is revalidated every 3 seconds.",
+      };
     default:
       throw new Error("Invalid type");
   }
@@ -36,29 +64,19 @@ const BlogPosts = async ({ type }: { type: FetchingType }) => {
   );
   return (
     <div className="divide-y divide-zinc-600">
-      {posts.items.map((post: RawBlogPost) => (
-        <div
-          key={post.fields.slug}
-          className="group rounded-lg border border-transparent h-full w-full min-h-[130px] overflow-hidden bg-origin-border bg-gradient-to-r from-blue-500 to-emerald-500 text-[#6b7280]"
-        >
-          <Link href={`/${type}/${post.fields.slug}`}>
-            <div className="p-4 bg-zinc-900 h-full flex items-center">
-              <div>
-                <h2 className="text-xl font-semibold text-zinc-200">
-                  {post.fields.title}
-                </h2>
-                <p className="mt-1 text-zinc-300">{post.fields.description}</p>
-                <p className="mt-1.5 text-zinc-500 text-xs">
-                  {dayjs(post.sys.createdAt).format("MMMM D, YYYY")}
-                </p>
-              </div>
-              <div className="ml-auto text-xs mt-2 group-hover:underline">
-                →
-              </div>
-            </div>
-          </Link>
-        </div>
-      ))}
+      {posts.items.map((post: RawBlogPost) => {
+        const cardContent = getFetchContent(type);
+        return (
+          <div
+            key={post.fields.slug}
+            className="group rounded-lg border border-transparent h-full w-full min-h-[130px] overflow-hidden bg-origin-border bg-gradient-to-r from-blue-500 to-emerald-500 text-[#6b7280]"
+          >
+            <Link href={`/${type}/${post.fields.slug}`}>
+              <Card title={cardContent.title} cta={cardContent.description} />
+            </Link>
+          </div>
+        );
+      })}
     </div>
   );
 };

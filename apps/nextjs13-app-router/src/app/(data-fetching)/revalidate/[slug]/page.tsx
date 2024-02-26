@@ -1,7 +1,7 @@
 import BlogPost from "../../../../components/BlogPost";
 
 async function fetcher(url: string) {
-  const res = await fetch(url, { next: { revalidate: 10 } });
+  const res = await fetch(url, { next: { revalidate: 3 } });
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary

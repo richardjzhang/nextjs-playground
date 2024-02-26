@@ -32,6 +32,41 @@ export default function Home() {
       <Title center>App Router</Title>
 
       <div className="mt-16 w-full">
+        <h2 className="text-2xl font-semibold text-zinc-300">Data Caching</h2>
+        <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4 place-content-evenly">
+          <Link className="h-full" href="/streaming">
+            <Card title="Streaming" cta="Demonstrating streaming in Next.js" />
+          </Link>
+          {/* @ts-expect-error Server Component */}
+          <BlogPosts type="no-store" />
+          {/* @ts-expect-error Server Component */}
+          <BlogPosts type="force-cache" />
+          {/* @ts-expect-error Server Component */}
+          <BlogPosts type="revalidate" />
+        </div>
+      </div>
+
+      {/* <div className="mt-16 w-full">
+        <h2 className="text-2xl font-semibold text-zinc-300">
+          HTML + RSC Caching
+        </h2>
+        <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4 place-content-evenly">
+          <Link className="h-full" href="/ssr">
+            <Card
+              title="Dynamic Rendering"
+              cta="Demonstrating dynamically rendering React Components"
+            />
+          </Link>
+          <Link className="h-full" href="/ppr">
+            <Card
+              title="Partial Pre-rendering"
+              cta="Demonstrating rendering a static shell of your React Components"
+            />
+          </Link>
+        </div>
+      </div> */}
+
+      <div className="mt-16 w-full">
         <h2 className="text-2xl font-semibold text-zinc-300">Edge Compute</h2>
         <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4 place-content-evenly">
           {EDGE_CARD_CONTENT.map((card) => (
@@ -39,45 +74,6 @@ export default function Home() {
               <Card {...card} />
             </Link>
           ))}
-        </div>
-      </div>
-
-      <div className="mt-16 w-full">
-        <h2 className="text-2xl font-semibold text-zinc-300">Streaming</h2>
-        <div className="mt-5 grid grid-cols-1 gap-4 place-content-evenly">
-          <Link className="h-full" href="/streaming">
-            <Card title="Streaming" cta="Demonstrating streaming in Next.js" />
-          </Link>
-        </div>
-      </div>
-
-      <div className="mt-16 w-full">
-        <h2 className="text-2xl font-semibold text-zinc-300">
-          Dynamic component
-        </h2>
-        <div className="mt-5 grid grid-cols-1 gap-4 place-content-evenly">
-          {/* @ts-expect-error Server Component */}
-          <BlogPosts type="ssr" />
-        </div>
-      </div>
-
-      <div className="mt-16 w-full">
-        <h2 className="text-2xl font-semibold text-zinc-300">
-          Static component
-        </h2>
-        <div className="mt-5 grid grid-cols-1 gap-4 place-content-evenly">
-          {/* @ts-expect-error Server Component */}
-          <BlogPosts type="ssg" />
-        </div>
-      </div>
-
-      <div className="mt-16 w-full">
-        <h2 className="text-2xl font-semibold text-zinc-300">
-          Revalidating static component
-        </h2>
-        <div className="mt-5 grid grid-cols-1 gap-4 place-content-evenly">
-          {/* @ts-expect-error Server Component */}
-          <BlogPosts type="isr" />
         </div>
       </div>
     </>
